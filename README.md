@@ -1,1 +1,3 @@
-# ugeopgave-6-files-and-exceptions
+Erik Næsted
+
+erna1000@stud.ek.dk
