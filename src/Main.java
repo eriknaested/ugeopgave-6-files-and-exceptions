@@ -3,9 +3,12 @@ import Opgave2.Drink;
 import Opgave2b.Shop;
 import Opgave3.Reader;
 import Opgave3b.Reader3b;
+import Opgave6.Cafe;
 
+import javax.xml.catalog.CatalogFeatures;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -112,17 +115,35 @@ public class Main {
         drinks.add("Espresso, En kraftfuld og koncentreret kaffe, 25.0");
         drinks.add("Latte, Espresso med dampet mælk, 45.0");
         drinks.add("Cola, Kold og brusende, 30.0");
+        drinks.add("Water, Stille kildevand, gratis");
+
+        double sum = 0;
 
         for (String drink : drinks) {
             String[] values = drink.split(",");
             String name = values[0].trim();
             String description = values[1].trim();
-            String price = values[2].trim();
-            System.out.println(name + " - " + description + " (" + price + " kr.)");
+            // String price = values[2].trim();
+            try {
+                double price = Double.parseDouble(values[2].trim());
+                sum += price;
+                System.out.println(name + " - " + description + " (" + price + " kr.)");
+            } catch (NumberFormatException nfe) {
+                System.out.println(values[2].trim() + " is not a number");
+            }
         }
 
-         */ //Opgave 4
+        System.out.println("Samlet pris for alle drinks: " + sum + " kr.");
 
+         */ //Opgave 4  og 5
+
+        Cafe cafe = new Cafe();
+
+        Scanner scanner = new Scanner(System.in);
+        cafe.showMenu();
+
+        // int choice = cafe.promptNumber("Choose a coffee: ");
+        cafe.buyCoffee();
 
     }
 }
