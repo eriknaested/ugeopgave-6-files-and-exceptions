@@ -23,6 +23,10 @@ public class Drink {
         return name;
     }
 
+    public int getSoldNumber() {
+        return soldNumber;
+    }
+
     @Override
     public String toString() {
         return name + ", " + price + ", " + soldNumber;

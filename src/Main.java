@@ -14,9 +14,6 @@ import java.util.Scanner;
 
 public class Main {
 
-
-
-
     public static void main(String[] args) {
 
         /* Opgave1 o = new Opgave1();
@@ -139,11 +136,8 @@ public class Main {
 
         Cafe cafe = new Cafe();
 
-        Scanner scanner = new Scanner(System.in);
-        cafe.showMenu();
-
         // int choice = cafe.promptNumber("Choose a coffee: ");
-        cafe.buyCoffee();
+        cafe.showMenu();
 
     }
 }
